@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basics - Comprehensive Guide</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f0f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        h2 {
+            color: #007BFF;
+            padding: 10px;
+
+        }
+
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        section hr {
+            margin: 20px 0;
+        }
+
+        .example {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Basics</h1>
+
+    <!-- 1. CSS Introduction -->
+    <section>
+        <h2>1. CSS Introduction</h2>
+        <p>CSS (Cascading Style Sheets) is used to control the layout and appearance of web pages.</p>
+    </section>
+    <hr>
+
+    <!-- 2. How Many Ways to CSS -->
+    <section>
+        <h2>2. Ways to Add CSS</h2>
+        <p>CSS can be added in three ways:</p>
+        <ul>
+            <li>
+                Inline CSS: Inside the HTML element's
+                <code>style</code> attribute (e.g.,
+                <code>&lt;p style="color: red;"&gt;This is inline CSS.&lt;/p&gt;</code>).
+            </li>
+            <li>
+                Internal CSS: Inside a <code>&lt;style&gt;</code> tag within the HTML file. Example:
+                <pre>
+                    <code>&lt;style&gt;
+                    p.internal {
+                        color: blue;
+                    }&lt;/style&gt;</code></pre>
+            </li>
+            <li>
+                External CSS: Using an external stylesheet linked via <code>&lt;link&gt;</code> tag. Example:
+                <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <hr>
+
+    <!-- 3. CSS Syntax -->
+    <section>
+        <h2>3. CSS Syntax</h2>
+        <p>The CSS syntax includes selectors and declarations (property: value).</p>
+    </section>
+    <hr>
+
+    <!-- 4. CSS Selectors -->
+    <section>
+        <h2>4. CSS Selectors</h2>
+        <p>Selectors specify which elements to style. Below are six commonly used selectors:</p>
+        <ul>
+            <li><strong>Universal Selector:</strong> Selects all elements using <code>*{}</code>.</li>
+            <li><strong>Elements Selector:</strong> Selects elements by their tag name (e.g., <code>p{}</code>).</li>
+            <li><strong>Class Selector:</strong> Selects elements with a specific class using <code>.className{}</code>
+            </li>
+            <li><strong>ID Selector:</strong> Selects an element with a specific ID using <code>#idName{}</code>.</li>
+            <li><strong>Group Selector:</strong> Applies styles to multiple elements separated by
+                commas.<code>p,h1,div{}</code></li>
+        </ul>
+
+
+    </section>
+    <hr>
+
+
+    <!-- 5. CSS Comments -->
+    <section>
+        <h2>5. CSS Comments</h2>
+        <p>CSS comments start with <code>/*</code> and end with <code>*/</code>.</p>
+    </section>
+    <hr>
+
+    <!-- 6. CSS Colors -->
+    <section>
+        <h2>6. CSS Colors</h2>
+        <p>Colors can be defined using names, hex, RGB, and more.</p>
+        <ul>
+            <li><strong>Color Names:</strong> Predefined names like <code>red</code>, <code>blue</code>,
+                <code>green</code>.
+            </li>
+            <li><strong>HEX:</strong> Hexadecimal values like <code>#ff0000</code>, <code>#00ff00</code>.</li>
+            <li><strong>RGB:</strong> Red-Green-Blue values like <code>rgb(255, 0, 0)</code>,
+                <code>rgb(0, 255, 0)</code>.
+            </li>
+            <li><strong>HSL:</strong> Hue-Saturation-Lightness values like <code>hsl(0, 100%, 50%)</code>,
+                <code>hsl(120, 100%, 50%)</code>.
+            </li>
+        </ul>
+
+    </section>
+    <hr>
+
+    <!-- 7. CSS Color Gradients -->
+    <section>
+        <h2>7. CSS Color Gradients</h2>
+        <p>Gradients provide smooth transitions between colors. CSS supports the following gradient types:</p>
+        <ul>
+            <li><strong>Linear Gradient:</strong> Transitions colors in a straight line.</li>
+            <li><strong>Radial Gradient:</strong> Colors radiate outward from a central point.</li>
+            <li><strong>Conic Gradient:</strong> Colors rotate around a central point.</li>
+        </ul>
+
+        <div style="padding: 10px; background: #f9f9f9;">
+            <!-- Linear Gradient -->
+            <div style="height: 50px; background: linear-gradient(to right, red, yellow); margin-bottom: 10px;">
+                Linear Gradient: Red to Yellow
+            </div>
+            <!-- Radial Gradient -->
+            <div style="height: 50px; background: radial-gradient(circle, blue, white); margin-bottom: 10px;">
+                Radial Gradient: Blue to White
+            </div>
+            <!-- Conic Gradient -->
+            <div style="height: 50px; background: conic-gradient(from 0deg, red, yellow, green, blue, red);">
+                Conic Gradient: Multi-Color
+            </div>
+        </div>
+    </section>
+    <hr>
+
+    <!-- 8. Styling Backgrounds -->
+    <section>
+        <h2>8. Styling Backgrounds</h2>
+        <p>CSS background properties control background colors, images, and positions. Below are some examples:</p>
+        <ul>
+            <li><strong>Background Color:</strong> Sets a solid color as the background.</li>
+            <li><strong>Background Image:</strong> Uses an image as the background.</li>
+            <li><strong>Background Repeat:</strong> Specifies whether the background image repeats.</li>
+            <li><strong>Background Position:</strong> Sets the position of the background image.</li>
+            <li><strong>Background Size:</strong> Specifies the size of the background image.</li>
+        </ul>
+
+        <div>
+            <!-- Background Color -->
+            <div style="background-color: lightblue; padding: 10px; margin-bottom: 10px;">
+                Background Color Example: Light Blue
+            </div>
+
+            <!-- Background Image -->
+            <div
+                style="background-image: url(./assets/sample.jpg); background-size: cover; padding: 20px; margin-bottom: 10px; color: white;">
+                Background Image Example (Cover)
+            </div>
+
+            <!-- Background Repeat -->
+            <div
+                style="background-image: url(./assets/sample.jpg); background-repeat: repeat; padding: 20px; margin-bottom: 10px;">
+                Background Repeat Example
+            </div>
+
+            <!-- Background Position -->
+            <div
+                style="background-image: url(./assets/sample.jpg); background-repeat: no-repeat; background-position: center; padding: 20px;">
+                Background Position Example: Centered Image
+            </div>
+        </div>
+    </section>
+    <hr>
+
+
+    <!-- 9. Styling Text & Text Effects -->
+    <section>
+        <h2>9. Styling Text & Text Effects</h2>
+        <p>Text styling includes font size, color, alignment, and more. Below are some examples:</p>
+        <ul>
+            <li><strong>Font Size:</strong> Adjusts the size of the text.</li>
+            <li><strong>Text Color:</strong> Changes the color of the text.</li>
+            <li><strong>Text Alignment:</strong> Aligns the text (left, center, right).</li>
+            <li><strong>Text Decoration:</strong> Applies underlines, line-through, or none.</li>
+            <li><strong>Text Shadow:</strong> Adds shadow effects to text.</li>
+        </ul>
+
+        <div class="example">
+            <!-- Font Size -->
+            <p style="font-size: 20px;">This text has a font size of 20px. <code>(style="font-size: 20px;")</code></p>
+
+            <!-- Text Color -->
+            <p style="color: red;">This text is styled with a dark red color. <code>(style="color: red;")</code></p>
+
+            <!-- Text Alignment -->
+            <p style="text-align: right;">This text is right-aligned. <code>(style="text-align: right;")</code></p>
+
+            <!-- Text Decoration -->
+            <p style="text-decoration: underline;">This text is underlined.
+                <code>(style="text-decoration: underline;")</code>
+            </p>
+
+            <!-- Text Shadow -->
+            <p style="text-shadow: 2px 2px 4px gray;">This text has a shadow effect.
+                <code>(style="text-shadow: 2px 2px 4px gray;")</code>
+            </p>
+        </div>
+    </section>
+    <hr>
+
+
+    <!-- 10. Styling Fonts -->
+    <section>
+        <h2>10. Styling Fonts</h2>
+        <p>Font properties include family, size, weight, and style.</p>
+        <div class="example" style="font-family: 'Courier New', monospace;">
+            Font styling example using Courier New. <code>(style="font-family: 'Courier New', monospace;")</code>
+        </div>
+    </section>
+    <hr>
+
+    <!-- 11. Styling Links -->
+    <section>
+        <h2>11. Styling Links</h2>
+        <p>Links can be styled for different states such as normal, hover, active, and visited.</p>
+        <p>Example:</p>
+        <code>
+            &lt;a href="#" style="color: blue; text-decoration: none;"&gt;Styled Link&lt;/a&gt;
+        </code>
+
+        <div class="example">
+            <p>
+                <code>
+                    /* Normal state */
+                    a {
+                        color: blue;
+                        text-decoration: none;
+                        font-size: 16px;
+                    }
+                </code>
+                <br>
+                <code>
+                    /* Hover state */
+                    a:hover {
+                        color: green;
+                        text-decoration: underline;
+                    }
+                </code>
+                <br>
+                <code>
+                    /* Active state */
+                    a:active {
+                        color: red;
+                        text-decoration: none;
+                    }
+                </code>
+                <br>
+                <code>
+                    /* Visited state */
+                    a:visited {
+                        color: purple;
+                    }
+                </code>
+            </p>
+        </div>
+
+        <div class="example">
+            <style>
+                /* Normal state */
+                a {
+                    color: blue;
+                    text-decoration: none;
+                    font-size: 16px;
+                }
+
+                /* Hover state */
+                a:hover {
+                    color: green;
+                    text-decoration: underline;
+                }
+
+                /* Active state */
+                a:active {
+                    color: red;
+                    text-decoration: none;
+                }
+
+                /* Visited state */
+                a:visited {
+                    color: purple;
+                }
+            </style>
+
+            <a href="#">Styled Link - Hover over me or click!</a>
+        </div>
+    </section>
+    <hr>
+
+    <!-- 12. Styling Lists -->
+    <section>
+        <h2>12. Styling Lists</h2>
+        <p>Lists can be styled to control their markers, padding, and layout.</p>
+        <div class="example">
+            <ul style="list-style: square; color: red;">
+                <li>First item</li>
+                <li>Second item</li>
+            </ul>
+        </div>
+    </section>
+    <hr>
+
+    <!-- 13. Styling Tables -->
+    <section>
+        <h2>13. Styling Tables</h2>
+        <p>Tables can be styled for borders, spacing, and background colors.</p>
+
+        <p>Example:</p>
+        <div class="example">
+            <p>
+                <code>
+                    table {
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+                </code>
+                <br>
+                <code>
+                    th, td {
+                        border: 1px solid black;
+                        padding: 8px;
+                        text-align: left;
+                    }
+                </code>
+                <br>
+                <code>
+                    th {
+                        background-color: #f2f2f2;
+                    }
+                </code>
+                <br>
+                <code>
+                    tr:nth-child(even) {
+                        background-color: #f9f9f9;
+                    }
+                </code>
+            </p>
+        </div>
+
+        <div class="example">
+            <style>
+                /* Table styles */
+                table {
+                    border-collapse: collapse;
+                    width: 100%;
+                }
+
+                /* Table header and cell styles */
+                th,
+                td {
+                    border: 1px solid black;
+                    padding: 8px;
+                    text-align: left;
+                }
+
+                /* Header row background */
+                th {
+                    background-color: #f2f2f2;
+                }
+
+                /* Alternating row colors */
+                tr:nth-child(even) {
+                    background-color: #f9f9f9;
+                }
+            </style>
+
+            <table>
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                </tr>
+                <tr>
+                    <td>Row 1</td>
+                    <td>Row 2</td>
+                </tr>
+                <tr>
+                    <td>Row 3</td>
+                    <td>Row 4</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <hr>
+
+
+    <!-- 14. CSS Box Model -->
+    <section>
+        <h2>14. CSS Box Model</h2>
+        <p>The CSS box model includes the following components:</p>
+        <ul>
+            <li><b>Content:</b> The actual content of the box, such as text or an image.</li>
+            <li><b>Padding:</b> Space between the content and the border. Adds space inside the box.</li>
+            <li><b>Border:</b> A line surrounding the padding (if any) and the content.</li>
+            <li><b>Margin:</b> Space outside the border, separating the box from other elements.</li>
+        </ul>
+
+        <p>Example:</p>
+        <code>
+            &lt;div class="box-model"&gt;This is a box!&lt;/div&gt;
+        </code>
+
+        <div class="example">
+            <p>
+                <code>
+                    .box-model {
+                        width: 200px;
+                        height: 100px;
+                        margin: 20px;
+                        padding: 15px;
+                        border: 5px solid black;
+                        background-color: lightblue;
+                    }
+                </code>
+            </p>
+        </div>
+
+        <div class="example">
+            <style>
+                .box-model {
+                    width: 200px;
+                    /* Content width */
+                    height: 100px;
+                    /* Content height */
+                    margin: 20px;
+                    /* Space outside the border */
+                    padding: 15px;
+                    /* Space inside the border */
+                    border: 5px solid black;
+                    /* Border width and style */
+                    background-color: lightblue;
+                    /* Box background color */
+                }
+            </style>
+
+            <div class="box-model">This is a box!</div>
+        </div>
+
+        <p>The CSS box model can be visualized as follows:</p>
+        <ul>
+            <li><b>Content:</b> The inner area of the box, in this case, "This is a box!"</li>
+            <li><b>Padding:</b> Adds space inside the box, making the content visually separated from the border.</li>
+            <li><b>Border:</b> A solid black border of 5px width surrounds the padding and content.</li>
+            <li><b>Margin:</b> Creates 20px of space outside the box to separate it from other elements.</li>
+        </ul>
+    </section>
+    <hr>
+
+
+    <!-- 15. CSS Border -->
+    <section>
+        <h2>15. CSS Border</h2>
+        <p>Borders can be styled using width, color, and type.</p>
+        <div class="example" style="border: 2px dashed green;">
+            This box has a dashed green border. <code>(style="border: 2px dashed green;")</code>
+        </div>
+    </section>
+    <hr>
+
+    <!-- 16. CSS Outline -->
+    <section>
+        <h2>16. CSS Outline</h2>
+        <p>Outlines are drawn outside the border and do not affect layout.</p>
+        <div class="example" style="outline: 3px solid red;">
+            This box has a red outline. <code>(style="outline: 3px solid red;")</code>
+        </div>
+    </section>
+    <hr>
+
+
+    <!-- 17. CSS Margin -->
+    <section>
+        <h2>17. CSS Margin</h2>
+        <p>Margins create space outside an element's border.</p>
+        <div class="example" style="margin: 20px; background: lightgray;">
+            This box has a 20px margin. <code>(style="margin: 20px;")</code>
+        </div>
+    </section>
+    <hr>
+
+
+    <!-- 18. CSS Padding -->
+    <section>
+        <h2>18. CSS Padding</h2>
+        <p>Padding creates space inside an element's border.</p>
+        <div class="example" style="padding: 20px; background: lightcoral;">
+            This box has 20px padding. <code>(style="padding: 20px;")</code>
+        </div>
+    </section>
+    <hr>
+
+    <!-- 19. CSS Advanced -->
+    <section>
+        <h2>19. CSS Advanced</h2>
+        <p>Advanced CSS features include animations, transitions, and flexbox/grid layouts.</p>
+
+        <p><b>Example 1: Flexbox Layout</b></p>
+        <div class="example" style="display: flex; gap: 10px;">
+            <div style="background: red; padding: 10px; color: white;">Flex Item 1</div>
+            <div style="background: blue; padding: 10px; color: white;">Flex Item 2</div>
+            <div style="background: green; padding: 10px; color: white;">Flex Item 3</div>
+        </div>
+
+        <p><b>Example 2: Grid Layout</b></p>
+        <div class="example-grid">
+            <div class="grid-item">Grid Item 1</div>
+            <div class="grid-item">Grid Item 2</div>
+            <div class="grid-item">Grid Item 3</div>
+            <div class="grid-item">Grid Item 4</div>
+        </div>
+
+        <p><b>Example 3: Transitions and Animations</b></p>
+        <div class="example-animation">
+            <button class="animate-button">Hover Me!</button>
+        </div>
+
+        <style>
+            /* Flexbox Layout Example */
+            .example {
+                display: flex;
+                gap: 10px;
+            }
+
+            .example>div {
+                background: lightgray;
+                padding: 15px;
+                color: black;
+                text-align: center;
+                border-radius: 5px;
+                flex: 1;
+            }
+
+            /* Grid Layout Example */
+            .example-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .grid-item {
+                background: #ffd700;
+                padding: 15px;
+                text-align: center;
+                border: 2px solid #ccc;
+                border-radius: 5px;
+            }
+
+            /* Transitions and Animations Example */
+            .animate-button {
+                background: lightcoral;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: transform 0.3s ease, background-color 0.3s ease;
+            }
+
+            .animate-button:hover {
+                transform: scale(1.1);
+                background-color: darkred;
+            }
+        </style>
+    </section>
+    <hr>
+
+    <!-- 20. CSS Display -->
+    <section>
+        <h2>20. CSS Display</h2>
+        <p>The <code>display</code> property specifies how elements are displayed (block, inline, none, etc.).</p>
+        <div class="example" style="display: inline-block; background: yellow; padding: 5px;">
+            This is an inline-block element.
+        </div>
+    </section>
+    <hr>
+
+    <!-- 21. CSS Positioning -->
+    <section>
+        <h2>21. CSS Positioning</h2>
+        <p>CSS positioning is used to position elements relative to their container, viewport, or other elements.</p>
+
+        <div class="position-example" style="position: relative; height: 200px; background: lightblue;">
+            <!-- Absolute Positioning -->
+            <div style="position: absolute; top: 50px; left: 50px; background: red; padding: 10px; color: white;">
+                Absolute
+            </div>
+
+            <!-- Relative Positioning -->
+            <div style="position: relative; top: 20px; left: 20px; background: green; padding: 10px; color: white;">
+                Relative
+            </div>
+
+            <!-- Fixed Positioning -->
+            <div style="position: fixed; bottom: 10px; right: 10px; background: blue; padding: 10px; color: white;">
+                Fixed
+            </div>
+        </div>
+    </section>
+    <hr>
+
+    <!-- 22. CSS Floating -->
+
+    <section>
+        <h2>22. CSS Floating</h2>
+        <p>Floating allows elements to be aligned to the left or right within their container.</p>
+        <div style="overflow: auto;">
+            <div style="float: left; width: 30%; background: lightgreen; padding: 10px;">Float Left</div>
+            <div style="float: right; width: 30%; background: lightcoral; padding: 10px;">Float Right</div>
+        </div>
+    </section>
+    <hr>
+    <!-- 23. CSS Z-index -->
+
+    <section>
+        <h2>23. CSS Z-index</h2>
+        <p>The z-index property specifies the stack order of elements.</p>
+        <div style="position: relative;">
+            <div style="position: absolute; top: 0; left: 0; z-index: 1; background: yellow; padding: 20px;">Z-index 1
+            </div>
+            <div style="position: absolute; top: 10px; left: 10px; z-index: 2; background: orange; padding: 20px;">
+                Z-index 2</div>
+        </div>
+    </section>
+    <hr>
+    <!-- 24. CSS Navigation Bar -->
+
+    <section>
+        <h2>24. CSS Navigation Bar</h2>
+        <nav style="background: black; padding: 10px;">
+            <a href="#" style="color: white; margin-right: 10px; text-decoration: none;">Home</a>
+            <a href="#" style="color: white; margin-right: 10px; text-decoration: none;">About</a>
+            <a href="#" style="color: white; text-decoration: none;">Contact</a>
+        </nav>
+    </section>
+    <hr>
+    <!-- 25. CSS Object Fit and Positions -->
+
+    <section>
+        <h2>25. CSS Object Fit and Positions</h2>
+        <img src="./assets/sample.jpg" style="width: 300px; height: 200px; object-fit: cover;" alt="Example">
+    </section>
+    <hr>
+    <!-- 26. CSS Image Gallery -->
+
+    <section>
+        <h2>26. CSS Image Gallery</h2>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+            <img src="./assets/sample.jpg" style="width: 100%; height: auto;" alt="Image 1">
+            <img src="./assets/sample.jpg" style="width: 100%; height: auto;" alt="Image 2">
+            <img src="./assets/sample.jpg" style="width: 100%; height: auto;" alt="Image 3">
+        </div>
+    </section>
+    <hr>
+
+    <!-- 27. CSS Image Opacity -->
+    <section>
+        <h2>27. CSS Image Opacity</h2>
+        <img src="./assets/sample.jpg" style="opacity: 0.5; width: 100px; height: auto;" alt="Semi-Transparent Image">
+    </section>
+    <hr>
+    <!-- 28. CSS Image Sprites -->
+
+    <section>
+        <h2>28. CSS Image Sprites</h2>
+        <div style="width: 100px; height: 100px; background: url('./assets/sample.jpg') -10px -10px;">
+            Part 1
+        </div>
+        <div style="width: 100px; height: 100px; background: url('./assets/sample.jpg') -120px -10px;">
+            Part 2
+        </div>
+    </section>
+
+    <hr>
+    <!-- 29. CSS 2D, 3D Transformations -->
+
+    <section>
+        <h2>29. CSS 2D, 3D Transformations</h2>
+        <div style="transform: rotate(180deg); background: lightblue; padding: 20px;">2D Rotation</div>
+        <div style="transform: perspective(1000px) rotateX(60deg); background: lightgreen; padding: 20px;">3D Rotation
+        </div>
+    </section>
+    <hr>
+    <!-- 30. CSS Transition Property -->
+
+    <section>
+        <h2>30. CSS Transition Property</h2>
+        <button style="background: red; color: white; padding: 10px; transition: background 0.8s ease;">Hover
+            Me</button>
+    </section>
+    <hr>
+    <!-- 31. CSS Keyframe Animations -->
+
+    <section>
+        <h2>31. CSS Keyframe Animations</h2>
+        <style>
+            @keyframes move {
+                0% {
+                    transform: translateX(0);
+                }
+
+                50% {
+                    transform: translateX(100px);
+                }
+
+                100% {
+                    transform: translateX(0);
+                }
+            }
+
+            .animate {
+                animation: move 2s infinite;
+            }
+        </style>
+        <div class="animate" style="background: orange; padding: 10px;">Animated Box</div>
+    </section>
+    <hr>
+
+    <!-- 32. CSS Flexbox -->
+    <section>
+        <h2>32. CSS Flexbox</h2>
+        <div style="display: flex; gap: 10px;">
+            <div style="flex: 1; background: lightblue; padding: 10px;">Flex Item 1</div>
+            <div style="flex: 2; background: lightgreen; padding: 10px;">Flex Item 2</div>
+        </div>
+    </section>
+    <hr>
+    <!-- 33. CSS Grid -->
+
+    <section>
+        <h2>33. CSS Grid</h2>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+            <div style="background: lightblue; padding: 10px;">Grid Item 1</div>
+            <div style="background: lightgreen; padding: 10px;">Grid Item 2</div>
+            <div style="background: lightcoral; padding: 10px;">Grid Item 3</div>
+        </div>
+    </section>
+    <hr>
+    <!-- 34. CSS Media Queries -->
+
+    <section>
+        <h2>34. CSS Media Queries</h2>
+        <style>
+            /* Default style */
+            .responsive {
+                background: gray;
+                color: white;
+                padding: 20px;
+                text-align: center;
+            }
+
+            /* Style for screens smaller than 600px */
+            @media (max-width: 599px) {
+                .responsive {
+                    background: yellow;
+                    color: red;
+                }
+            }
+
+            /* Style for screens with a width between 600px and 1200px */
+            @media (min-width: 600px) and (max-width: 1200px) {
+                .responsive {
+                    background: lightgreen;
+                    color: black;
+                }
+            }
+
+            /* Style for screens larger than 1200px */
+            @media (min-width: 1201px) {
+                .responsive {
+                    background: lightblue;
+                    color: darkblue;
+                }
+            }
+        </style>
+        <div class="responsive">
+            Resize the window to see the background and text color change!
+        </div>
+    </section>
+
+
+    <hr>
+    <!-- 35. CSS Variables -->
+
+    <section>
+        <h2>35. CSS Variables</h2>
+        <style>
+            :root {
+                --primary-color: lightblue;
+            }
+
+            .variable-example {
+                background: var(--primary-color);
+                padding: 10px;
+            }
+        </style>
+        <div class="variable-example">This uses a CSS variable!</div>
+    </section>
+
+
+</body>
+
+</html>
