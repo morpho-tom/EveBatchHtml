@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Examples</title>
+  <style>
+    /* General Styles */
+    * {
+      padding: 0px 10px;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 20px;
+      background-color: #f0f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1,
+    h2 {
+      color: #007BFF;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+
+    h2 {
+      color: #0078D7;
+      font-size: 1.8rem;
+      border-bottom: 2px solid #0078D7;
+      padding-bottom: 5px;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    li {
+      margin: 5px 0;
+    }
+
+    code {
+      background-color: #f8f9fa;
+      padding: 2px 5px;
+      font-family: 'Courier New', Courier, monospace;
+      border-radius: 3px;
+    }
+
+    /* Table Styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background-color: white;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    /* Form Styles */
+    form {
+      margin-top: 20px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input,
+    select,
+    textarea,
+    /* button {
+        width: 100%;
+        max-width: 400px;
+        padding: 10px;
+        margin-bottom: 15px;
+        font-size: 14px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    } */
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      width: auto;
+    }
+
+    /* button {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    } */
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Section Styles */
+    section {
+      margin: 20px 0;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    section hr {
+      margin: 20px 0;
+    }
+
+    details {
+      margin: 10px 0;
+    }
+
+    pre {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      font-size: 1rem;
+      color: #000;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>JavaScript Examples</h1>
+
+  <!-- 1.0 History of JavaScript -->
+  <section>
+    <h2>1.0 History of JavaScript</h2>
+    <p>
+      JavaScript was developed by <strong>Brendan Eich</strong> in 1995 at Netscape.
+      Initially named <strong>Mocha</strong>, it was later renamed <strong>LiveScript</strong> and eventually
+      <strong>JavaScript</strong> to align with the Java programming language's popularity.
+    </p>
+    <p>
+      Over the years, JavaScript has become a core web technology. Key milestones include:
+    </p>
+    <ul>
+      <li><strong>1997:</strong> ECMAScript (European Computer Manufacturers Association Script) 1.0 was released.</li>
+      <li><strong>2009:</strong> ES5 introduced strict mode, JSON support, and more.</li>
+      <li><strong>2015:</strong> ES6 introduced modern features like `let`, `const`, arrow functions, and promises.</li>
+    </ul>
+  </section>
+
+  <!-- 1.1 How to Add JS Files in HTML -->
+  <section>
+    <h2>1.1 How to Add JS Files in HTML</h2>
+    <p>You can add JavaScript to HTML in three ways:</p>
+    <ul>
+      <li><strong>Inline JavaScript:</strong> Write code directly inside an HTML element.</li>
+      <li><strong>Internal JavaScript:</strong> Use the <code>&lt;script&gt;</code> tag in the HTML document.</li>
+      <li><strong>External JavaScript:</strong> Link an external `.js` file using the
+        <code>&lt;script src="script.js"&gt;</code> tag.
+      </li>
+    </ul>
+    <pre>&lt;script src="script.js"&gt;&lt;/script&gt;</pre>
+  </section>
+
+  <!-- 1.2 Syntax and Output Statement -->
+  <section>
+    <h2>1.2 Syntax and Output Statement</h2>
+    <p>
+      JavaScript syntax includes statements, blocks, and output methods:
+    </p>
+    <ul>
+      <li><strong>Statements:</strong> Individual instructions, ending with a semicolon.</li>
+      <li><strong>Code Blocks:</strong> Enclosed within curly braces <code>{}</code>.</li>
+      <li><strong>Output Methods:</strong></li>
+      <ul>
+        <li><code>console.log()</code>: Logs messages to the developer console.</li>
+        <li><code>document.write()</code>: Writes output to the HTML document.</li>
+        <li><code>alert()</code>: Displays pop-up alerts.</li>
+      </ul>
+    </ul>
+    <pre>
+console.log("Hello, JavaScript!");
+document.write("Hello, JavaScript!");
+alert("Hello, JavaScript!");
+  </pre>
+  </section>
+
+  <!-- 1.3 What is EcmaScript (ES)? -->
+  <section>
+    <h2>1.3 What is EcmaScript (ES)?</h2>
+    <p>
+      <strong>EcmaScript (ES)</strong> is the standard that defines JavaScript. ES6, introduced in 2015, brought modern
+      features such as:
+    </p>
+    <ul>
+      <li><strong>ES1 (1997):</strong> The first edition, laying the foundation for the language.</li>
+      <li><strong>ES5 (2009):</strong> Introduced <code>strict mode</code>, JSON support, and array methods like
+        <code>forEach</code>, <code>map</code>, and <code>filter</code>.
+      </li>
+      <li><strong>ES6 (2015):</strong> A major update adding modern features such as:
+        <ul>
+          <li><code>let</code> and <code>const</code> for variable declarations.</li>
+          <li>Arrow functions for concise syntax.</li>
+          <li>Template literals for easier string interpolation.</li>
+          <li>Classes for object-oriented programming.</li>
+          <li>Promises for asynchronous programming.</li>
+        </ul>
+      </li>
+      <li><strong>ES6+:</strong> Subsequent versions (e.g., ES7, ES8) continue to enhance JavaScript with new features
+        like <code>async/await</code>, <code>optional chaining</code>, and <code>bigint</code>.</li>
+    </ul>
+  </section>
+
+  <!-- 1.4 ES6+ Properties -->
+  <section>
+    <h2>1.4 ES6+ Properties</h2>
+    <p>
+      ES6 introduced many modern features, such as:
+    </p>
+    <ul>
+      <li><strong>Arrow Functions:</strong> Concise syntax for functions.</li>
+      <li><strong>Template Literals:</strong> String interpolation using backticks.</li>
+      <li><strong>Destructuring:</strong> Extract values from arrays or objects.</li>
+    </ul>
+    <pre>
+let greet = (name) => `Hello, ${name}`;
+console.log(greet("Alice"));
+
+let { x, y } = { x: 1, y: 2 };
+console.log(x, y);
+  </pre>
+  </section>
+
+
+  <!-- 1.5 JS Variables -->
+  <section>
+    <h2>1.5 JavaScript Variables</h2>
+    <p>
+      Variables in JavaScript are used to store and manage data. They act as containers for values that can be accessed
+      or manipulated throughout your program. JavaScript provides three ways to declare variables: <code>var</code>,
+      <code>let</code>, and <code>const</code>.
+    </p>
+    <h3>1. <code>var</code> (Legacy Declaration)</h3>
+    <p>
+      The <code>var</code> keyword was the original way to declare variables in JavaScript. However, it has some issues,
+      such as function scope and potential for accidental overwriting due to its lack of block-level scope.
+    </p>
+    <pre>
+  var age = 30;
+  console.log(age); // Output: 30
+    </pre>
+
+    <h3>2. <code>let</code> (Modern Declaration)</h3>
+    <p>
+      The <code>let</code> keyword, introduced in ES6, allows you to declare block-scoped variables. This prevents
+      issues caused by <code>var</code>'s function-scoping behavior.
+    </p>
+    <pre>
+  let name = "John";
+  if (true) {
+    let name = "Jane"; // This is a new variable in the block scope
+    console.log(name); // Output: Jane
+  }
+  console.log(name); // Output: John
+    </pre>
+
+    <h3>3. <code>const</code> (Constant Declaration)</h3>
+    <p>
+      The <code>const</code> keyword, also introduced in ES6, is used to declare constants. Constants must be
+      initialized at the time of declaration and cannot be reassigned.
+    </p>
+    <pre>
+  const PI = 3.14;
+  console.log(PI); // Output: 3.14
+  // PI = 3.15; // This will throw an error
+    </pre>
+
+    <h3>Key Differences Between <code>var</code>, <code>let</code>, and <code>const</code>:</h3>
+    <ul>
+      <li><code>var</code> is function-scoped, while <code>let</code> and <code>const</code> are block-scoped.</li>
+      <li><code>let</code> allows reassignment, whereas <code>const</code> does not.</li>
+      <li><code>const</code> must be initialized during declaration, while <code>var</code> and <code>let</code> can be
+        declared without initialization.</li>
+    </ul>
+
+    <h3>Best Practices:</h3>
+    <ul>
+      <li>Use <code>let</code> for variables that will change during runtime.</li>
+      <li>Use <code>const</code> for values that remain constant.</li>
+      <li>Avoid using <code>var</code> in modern JavaScript to prevent unexpected behavior.</li>
+    </ul>
+  </section>
+
+
+  <!-- 1.6 JS Data Types -->
+  <section>
+    <h2>1.6 JavaScript Data Types</h2>
+    <p>
+      JavaScript supports various data types to store and manipulate values. These are categorized into two main groups:
+      <strong>primitive data types</strong> and <strong>non-primitive (complex) data types</strong>.
+    </p>
+
+    <h3>1. Primitive Data Types</h3>
+    <p>These are the basic building blocks of JavaScript. They represent single values and are immutable (cannot be
+      changed).</p>
+    <ul>
+      <li>
+        <strong>String:</strong> Used to represent text. Strings are enclosed in single or double quotes.
+        <pre>
+  let greeting = "Hello, World!";
+  console.log(typeof greeting); // Output: string
+        </pre>
+      </li>
+      <li>
+        <strong>Number:</strong> Represents both integer and floating-point numbers.
+        <pre>
+  let age = 25;
+  let pi = 3.14;
+  console.log(typeof age); // Output: number
+  console.log(typeof pi);  // Output: number
+        </pre>
+      </li>
+      <li>
+        <strong>Boolean:</strong> Represents true or false values, often used in conditional statements.
+        <pre>
+  let isJavaScriptFun = true;
+  console.log(typeof isJavaScriptFun); // Output: boolean
+        </pre>
+      </li>
+      <li>
+        <strong>Undefined:</strong> A variable declared but not assigned a value has the type <code>undefined</code>.
+        <pre>
+  let uninitializedVar;
+  console.log(typeof uninitializedVar); // Output: undefined
+        </pre>
+      </li>
+      <li>
+        <strong>Null:</strong> Represents an intentional absence of value. It is considered an object due to a legacy
+        bug in JavaScript.
+        <pre>
+  let emptyValue = null;
+  console.log(typeof emptyValue); // Output: object
+        </pre>
+      </li>
+    </ul>
+
+    <h3>2. Non-Primitive (Complex) Data Types</h3>
+    <p>These types are used to store collections of data or more complex entities.</p>
+    <ul>
+      <li>
+        <strong>Object:</strong> Represents key-value pairs. Objects can store multiple data types.
+        <pre>
+  let person = { name: "John", age: 30 };
+  console.log(typeof person); // Output: object
+        </pre>
+      </li>
+      <li>
+        <strong>Array:</strong> A special type of object used to store ordered lists of values.
+        <pre>
+  let numbers = [1, 2, 3, 4];
+  console.log(typeof numbers); // Output: object
+  console.log(Array.isArray(numbers)); // Output: true
+        </pre>
+      </li>
+      <li>
+        <strong>Function:</strong> A block of reusable code. Technically, functions are a subtype of objects.
+        <pre>
+  function greet() {
+    return "Hello!";
+  }
+  console.log(typeof greet); // Output: function
+        </pre>
+      </li>
+    </ul>
+
+    <h3>3. Key Points</h3>
+    <ul>
+      <li><strong>Dynamic Typing:</strong> JavaScript variables can hold values of any type, and their type can change
+        dynamically.</li>
+      <li><strong>Type Checking:</strong> Use the <code>typeof</code> operator to determine the type of a variable.</li>
+      <li><strong>Falsy Values:</strong> Some values are treated as <code>false</code> in conditions, such as
+        <code>0</code>, <code>""</code> (empty string), <code>null</code>, <code>undefined</code>, <code>NaN</code>, and
+        <code>false</code>.
+      </li>
+    </ul>
+
+    <h3>4. Example: Using Various Data Types</h3>
+    <pre>
+  let string = "Hello";
+  let number = 42;
+  let boolean = true;
+  let object = { key: "value" };
+  let array = [1, 2, 3];
+  let nullValue = null;
+  let undefinedValue;
+  
+  console.log(typeof string);        // Output: string
+  console.log(typeof number);        // Output: number
+  console.log(typeof boolean);       // Output: boolean
+  console.log(typeof object);        // Output: object
+  console.log(Array.isArray(array)); // Output: true
+  console.log(typeof nullValue);     // Output: object
+  console.log(typeof undefinedValue);// Output: undefined
+    </pre>
+  </section>
+
+
+  <!-- JS Operators -->
+  <section>
+    <h2>2.0 Different kinds of Operators</h2>
+    <p>
+      JavaScript provides various operators for performing operations on
+      values:
+    </p>
+    <ul>
+      <li><strong>Arithmetic Operators:</strong> <code>+, ++, -, --, *, **, /, %</code></li>
+      <li>
+        <strong>Comparison Operators:</strong>
+        <code>== === != !== &lt; &gt; &lt;= &gt;=</code>
+      </li>
+      <li><strong>Logical Operators:</strong> <code>&& || !</code></li>
+      <li>
+        <strong>Assignment Operators:</strong> <code>= += -= *= /=</code>
+      </li>
+      <li>
+        <strong>Bitwise Operators:</strong>
+        <code>& | ^ ~ &lt;&lt; &gt;&gt; &gt;&gt;&gt;</code>
+      </li>
+    </ul>
+
+    <h2>2.1 How to Use Operators</h2>
+    <pre>
+      // Arithmetic Operators
+      let a = 10;
+      let b = 5;
+      console.log(a + b); // 15
+      console.log(a++ ); // 16 - post increment
+      console.log(++a ); // 11 - pre increment
+      console.log(a - b); // 5
+      console.log(a-- ); // 9 - post decrement
+      console.log(--a ); // 10 - pre decrement
+      console.log(a * b); // 50
+      console.log(a / b); // 2
+      console.log(a % b); // 0 <code>Remainder</code>
+
+     // special values NaN(Not An Number), Infinity, -Infinity
+      console.log( 5/0 ); // Infinity
+      console.log( 0/0 ); // NaN
+      console.log(math.sqrt(-1) ); // NaN
+      console.log() 
+          
+      // Comparison Operators
+      console.log(a > b);  // true
+      console.log(a === b); // false
+      console.log(a != b); // true
+          
+      // Logical Operators
+      console.log(a > 0 && b > 0); // true
+      console.log(a > 0 || b < 0); // true
+      console.log(!(a > b));       // false
+          
+      // Assignment Operators
+      let c = 20;
+      c += 10; // c = c + 10
+      console.log(c); // 30
+          
+      // Bitwise Operators
+      console.log(a & b); // 0 (AND)
+      console.log(a | b); // 15 (OR)
+      console.log(a ^ b); // 15 (XOR)
+        </pre>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Bitwise XOR Operator Explained</title>
+    </head>
+
+    <body>
+      <h1>Bitwise XOR (^) Operator Explanation</h1>
+      <script>
+        // Define two numbers
+        let a = 10; // Binary: 1010
+        let b = 5;  // Binary: 0101
+        // Perform XOR operation
+        let result = a ^ b; // XOR compares bits and outputs 1 if they differ, 0 if they are the same.
+        // Display the results
+        document.write("<h2>Bitwise XOR Calculation:</h2>");
+        document.write("<p>a = 10 (Binary: 1010)</p>");
+        document.write("<p>b = 5 (Binary: 0101)</p>");
+        document.write("<p>Result of a ^ b:</p>");
+        // Break down the XOR operation
+        document.write(`
+            <table border="1">
+                <tr>
+                    <th>Bit Position</th>
+                    <th>a (Bit)</th>
+                    <th>b (Bit)</th>
+                    <th>Result (a ^ b)</th>
+                </tr>
+                <tr>
+                    <td>1 (rightmost)</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>4 (leftmost)</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+            </table>
+        `);
+        // Show the final binary and decimal results
+        document.write("<p>Binary result: 1111</p>");
+        document.write("<p>Decimal result: " + result + "</p>");
+      </script>
+    </body>
+
+    </html>
+  </section>
+
+
+  <!-- Arrays and Strings -->
+  <section>
+    <h2>
+      3.0 String Methods
+    </h2>
+    <p style="font-size: 1.1rem; color: #333; line-height: 1.6;">
+      Strings in JavaScript come with a variety of built-in methods for manipulation and inspection.
+      Below are some commonly used string methods along with examples.
+    </p>
+    <pre>
+    let str = "JavaScript is Awesome";
+    
+    // Convert the string to uppercase
+    console.log(str.toUpperCase()); // Output: "JAVASCRIPT IS AWESOME"
+    
+    // Convert the string to lowercase
+    console.log(str.toLowerCase()); // Output: "javascript is awesome"
+    
+    // Check if the string includes a substring
+    console.log(str.includes("Awesome")); // Output: true
+    
+    // Get the length of the string
+    console.log(str.length); // Output: 21
+    
+    // Extract a portion of the string
+    console.log(str.slice(0, 10)); // Output: "JavaScript"
+    
+    // Replace part of the string
+    console.log(str.replace("Awesome", "Amazing")); // Output: "JavaScript is Amazing"
+    
+    // Split the string into an array of words
+    console.log(str.split(" ")); // Output: ["JavaScript", "is", "Awesome"]
+    
+    // Find the position of a substring
+    console.log(str.indexOf("is")); // Output: 11
+        </pre>
+
+
+    <h2>3.1 Array Methods</h2>
+    <p>
+      Arrays in JavaScript offer numerous methods to work with elements effectively.
+    </p>
+    <pre>
+  let arr = [1, 2, 3, 4, 5];
+  
+  // Double each element using map
+  console.log(arr.map(x => x * 2)); // Output: [2, 4, 6, 8, 10]
+  
+  // Filter elements greater than 2
+  console.log(arr.filter(x => x > 2)); // Output: [3, 4, 5]
+  
+  // Find the first element greater than 3
+  console.log(arr.find(x => x > 3)); // Output: 4
+  
+  // Check if all elements are greater than 0
+  console.log(arr.every(x => x > 0)); // Output: true
+  
+  // Check if any element is greater than 4
+  console.log(arr.some(x => x > 4)); // Output: true
+  
+  // Sum all elements using reduce
+  console.log(arr.reduce((acc, x) => acc + x, 0)); // Output: 15
+  
+  // Sort the array in descending order
+  console.log(arr.sort((a, b) => b - a)); // Output: [5, 4, 3, 2, 1]
+  
+  // Add elements to the end of the array
+  arr.push(6);
+  console.log(arr); // Output: [1, 2, 3, 4, 5, 6]
+  
+  // Remove the last element
+  arr.pop();
+  console.log(arr); // Output: [1, 2, 3, 4, 5]
+  
+  // Concatenate two arrays
+  let newArr = arr.concat([6, 7, 8]);
+  console.log(newArr); // Output: [1, 2, 3, 4, 5, 6, 7, 8]
+    </pre>
+
+    <h2>3.2 Object Methods</h2>
+    <p>
+      Objects in JavaScript store key-value pairs and come with useful methods for manipulation.
+    </p>
+    <pre>
+  let obj = {
+    name: "Alice",
+    age: 25,
+    country: "USA",
+    greet() {
+      return `Hello, my name is ${this.name}`;
+    }
+  };
+  
+  // Get the keys of the object
+  console.log(Object.keys(obj)); // Output: ["name", "age", "country", "greet"]
+  
+  // Get the values of the object
+  console.log(Object.values(obj)); // Output: ["Alice", 25, "USA", [Function: greet]]
+  
+  // Get both keys and values as an array of entries
+  console.log(Object.entries(obj)); 
+  // Output: [["name", "Alice"], ["age", 25], ["country", "USA"], ["greet", [Function: greet]]]
+  
+  // Add a new key-value pair
+  obj.hobby = "Reading";
+  console.log(obj); 
+  // Output: {name: "Alice", age: 25, country: "USA", greet: [Function: greet], hobby: "Reading"}
+  
+  // Delete a key-value pair
+  delete obj.hobby;
+  console.log(obj); 
+  // Output: {name: "Alice", age: 25, country: "USA", greet: [Function: greet]}
+  
+  // Check if a key exists
+  console.log("name" in obj); // Output: true
+  
+  // Use a method of the object
+  console.log(obj.greet()); // Output: "Hello, my name is Alice"
+  
+  // Clone an object
+  let clone = Object.assign({}, obj);
+  console.log(clone); 
+  // Output: {name: "Alice", age: 25, country: "USA", greet: [Function: greet]}
+    </pre>
+  </section>
+
+  <section>
+    <h2>4.0 If and If-Else</h2>
+    <p>If-else statements allow branching logic based on conditions:</p>
+    <pre>
+// Example: Checking a number
+let number = 10;
+
+if (number > 0) {
+console.log("The number is positive.");
+} else {
+console.log("The number is negative or zero.");
+}
+    </pre>
+    <p class="output">Output: The number is positive.</p>
+  </section>
+
+  <!-- Conditional Statement’s in JS -->
+
+  <section>
+    <h2>4.1 Else If</h2>
+    <p>Else-if extends conditional logic with multiple branches:</p>
+    <pre>
+// Example: Grading system
+let score = 85;
+
+if (score >= 90) {
+console.log("Grade: A");
+} else if (score >= 75) {
+console.log("Grade: B");
+} else if (score >= 50) {
+console.log("Grade: C");
+} else {
+console.log("Grade: F");
+}
+    </pre>
+    <p class="output">Output: Grade: B</p>
+  </section>
+
+  <section>
+    <h2>4.2 Switch Case</h2>
+    <p>Switch-case provides an alternative for multiple conditional checks:</p>
+    <pre>
+// Example: Day of the week
+let day = 3;
+
+switch (day) {
+case 1:
+    console.log("Monday");
+    break;
+case 2:
+    console.log("Tuesday");
+    break;
+case 3:
+    console.log("Wednesday");
+    break;
+case 4:
+    console.log("Thursday");
+    break;
+case 5:
+    console.log("Friday");
+    break;
+case 6:
+    console.log("Saturday");
+    break;
+case 7:
+    console.log("Sunday");
+    break;
+default:
+    console.log("Invalid day");
+}
+    </pre>
+    <p class="output">Output: Wednesday</p>
+  </section>
+
+  <!-- Functions and Loops -->
+  <section>
+    <h2>5.0 Functions</h2>
+    <pre>
+function greet(name) {
+    return `Hello, ${name}`;
+}
+console.log(greet("Alice"));
+        </pre>
+
+    <h2>5.1 Loops</h2>
+    <pre>
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+        </pre>
+  </section>
+
+  <!-- Class and Objects -->
+  <section>
+    <h2>6.1 Class and Objects</h2>
+    <pre>
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+    greet() {
+        return `Hello, ${this.name}`;
+    }
+}
+let person = new Person("John");
+console.log(person.greet());
+        </pre>
+  </section>
+
+
+  <script>
+
+    var a1 = 5
+
+    var a1 = 10
+
+    console.log(a1);
+
+
+    let b2 = 10
+
+    const c = 10
+
+    var a1 = 10
+
+    // JavaScript code will go here
+    console.log("var value  a1" + a1);
+  </script>
+
+  <!-- Other sections and topics will follow the same structure -->
+</body>
+
+</html>
