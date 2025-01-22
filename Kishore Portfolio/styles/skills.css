@@ -1,0 +1,47 @@
+.skills-content {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.skill-span span {
+    background-color: #E5E7EB;
+    border-radius: 12px;
+    padding: 4px 20px;
+    width: 105px;
+    height: 28px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.programming-skills {
+    display: flex;
+    width: fit-content;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+}
+
+.programming-skills .image-holder {
+    height: 120px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-holder img {
+    padding: 5px;
+}
+
+.programming-skills .image-holder:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+@media screen and (max-width:800px) {
+    .programming-skills{
+        gap: 35px;
+    }
+}
