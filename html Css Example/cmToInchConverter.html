@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cm to Inch Converter</title>
+    <style>
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 30%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1> cm to Inch Converter</h1>
+        <input type="number" id="cmValue" placeholder="Enter cm value">
+        <button onclick=convert()>Convert to Inch</button>
+        <h2 id="result"></h2>
+    </div>
+    <script>
+        function convert() {
+            const cmValue = document.getElementById("cmValue").value
+            console.log('cm value', cmValue);
+            const inchValue = cmValue / 2.54
+            console.log("inch Value", inchValue);
+            const result = document.getElementById("result")
+            result.innerHTML = /*`your inch value ${inchValue.toFixed(0)}`*/ ("your inch values"+ inchValue.toFixed(2))
+        } 
+    </script>
+</body>
+
+</html>

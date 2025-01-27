@@ -573,6 +573,33 @@ console.log(x, y);
     </html>
   </section>
 
+  <!-- Prompt in Javascript-->
+  <section>
+    <h2>Prompt</h2>
+    <p>The <code>prompt()</code> method displays a dialog box that prompts the user for input. You can use it in
+      combination with conditional statements to make decisions based on user input.</p>
+    <pre>
+let score = prompt("Enter your score:");
+score = Number(score);
+let grade;
+
+if (score >= 90) {
+grade = "A";
+} else if (score >= 80) {
+grade = "B";
+} else if (score >= 70) {
+grade = "C";
+} else if (score >= 60) {
+grade = "D";
+} else {
+grade = "F";
+}
+
+alert(`Grade: ${grade}`);
+    </pre>
+    <p class="output">Example Output: Grade: B (if the input score was 85)</p>
+  </section>
+
 
   <!-- Arrays and Strings -->
   <section>
@@ -700,6 +727,7 @@ console.log(x, y);
     </pre>
   </section>
 
+  <!-- Conditional Statement’s in JS -->
   <section>
     <h2>4.0 If and If-Else</h2>
     <p>If-else statements allow branching logic based on conditions:</p>
@@ -714,11 +742,7 @@ console.log("The number is negative or zero.");
 }
     </pre>
     <p class="output">Output: The number is positive.</p>
-  </section>
 
-  <!-- Conditional Statement’s in JS -->
-
-  <section>
     <h2>4.1 Else If</h2>
     <p>Else-if extends conditional logic with multiple branches:</p>
     <pre>
@@ -736,9 +760,7 @@ console.log("Grade: F");
 }
     </pre>
     <p class="output">Output: Grade: B</p>
-  </section>
 
-  <section>
     <h2>4.2 Switch Case</h2>
     <p>Switch-case provides an alternative for multiple conditional checks:</p>
     <pre>
@@ -772,25 +794,195 @@ default:
 }
     </pre>
     <p class="output">Output: Wednesday</p>
+
+    <h2>4.3 Ternary Operator</h2>
+    <p>The ternary operator is a shorthand for if-else:</p>
+    <pre>
+// Example: Checking age
+let age = 20;
+let canVote = age >= 18 ? "Yes" : "No";
+console.log(`Can vote: ${canVote}`);
+    </pre>
+    <p class="output">Output: Can vote: Yes</p>
+
+    <h2>4.4 Nested If</h2>
+    <p>Nested if allows deeper conditional logic:</p>
+    <pre>
+// Example: Checking range
+let value = 15;
+
+if (value > 0) {
+if (value < 20) {
+    console.log("Value is positive and less than 20.");
+} else {
+    console.log("Value is positive and 20 or greater.");
+}
+} else {
+console.log("Value is zero or negative.");
+}
+    </pre>
+    <p class="output">Output: Value is positive and less than 20.</p>
   </section>
+
+
+
+  <!-- 1. Styling Elements Dom examples-->
+  <section>
+    <h1>Advanced DOM Manipulation Examples</h1>
+    <h2>1. Styling Elements</h2>
+    <p id="styleText">This text will be styled dynamically.</p>
+    <button onclick="applyStyles()">Apply Styles</button>
+
+    <!-- 2. Event Listeners -->
+    <h2>2. Event Listeners</h2>
+    <button id="hoverButton">Hover Over Me</button>
+    <p id="hoverOutput"></p>
+
+    <!-- 3. Manipulating Attributes -->
+    <h2>3. Manipulating Attributes</h2>
+    <img id="dynamicImage" src="./assets/sample.jpg" width="200" height="200" alt="Placeholder Image">
+    <button onclick="changeImage()">Change Image</button>
+
+    <!-- 4. Forms and Input -->
+    <h2>4. Forms and Input</h2>
+    <form id="formExample">
+      <label for="nameInput">Enter your name:</label>
+      <input type="text" id="nameInput" name="name">
+      <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+    <p id="formOutput"></p>
+  </section>
+
+  <!--script for dom examples-->
+  <script>
+    // 1. Styling Elements
+    function applyStyles() {
+      const paragraph = document.getElementById("styleText");
+      paragraph.style.color = "red";
+      paragraph.style.fontSize = "20px";
+      paragraph.classList.add("highlight");
+    }
+
+
+    // 2. Event Listeners
+    const hoverButton = document.getElementById("hoverButton");
+    hoverButton.addEventListener("mouseover", () => {
+      document.getElementById("hoverButton").innerHTML = "Mouse is hovering!";
+    });
+
+    // hoverButton.addEventListener("mouseout", () => {
+    //   document.getElementById("hoverButton").innerHTML = "Mouse left the button.";
+    // });
+
+    // 3. Manipulating Attributes
+    function changeImage() {
+      const img = document.getElementById("dynamicImage");
+      console.log("image", img);
+
+      img.src = "https://picsum.photos/200/200.jpg";
+      img.alt = "Updated Placeholder Image";
+    }
+
+    // 4. Forms and Input
+    function submitForm() {
+      const name = document.getElementById("nameInput").value;
+      const output = document.getElementById("formOutput");
+      if (name) {
+        output.textContent = `Hello, ${name}!`;
+      } else {
+        output.textContent = "Please enter your name!";
+      }
+    }
+  </script>
 
   <!-- Functions and Loops -->
   <section>
     <h2>5.0 Functions</h2>
     <pre>
+// Simple Function
 function greet(name) {
-    return `Hello, ${name}`;
+return `Hello, ${name}`;
 }
 console.log(greet("Alice"));
-        </pre>
+
+// Arrow Function
+const add = (a, b) => a + b;
+console.log(add(5, 3));
+
+// Function with Default Parameters
+function multiply(a, b = 1) {
+return a * b;
+}
+console.log(multiply(5)); // 5
+console.log(multiply(5, 4)); // 20
+
+// Anonymous Function
+let square = function (x) {
+return x * x;
+};
+console.log(square(4)); // 16
+
+// Recursive Function
+function factorial(n) {
+if (n === 0) return 1;
+return n * factorial(n - 1);
+}
+console.log(factorial(5)); // 120
+    </pre>
 
     <h2>5.1 Loops</h2>
     <pre>
+// For Loop
 for (let i = 0; i < 5; i++) {
-    console.log(i);
+console.log(i);
 }
-        </pre>
-  </section>
+
+// While Loop
+let count = 0;
+while (count < 5) {
+console.log(count);
+count++;
+}
+
+// Do-While Loop
+let index = 0;
+do {
+console.log(index);
+index++;
+} while (index < 5);
+
+// For-Of Loop
+let arr = ["a", "b", "c"];
+for (let item of arr) {
+console.log(item);
+}
+
+// For-In Loop
+let obj = { name: "Alice", age: 25 };
+for (let key in obj) {
+console.log(`${key}: ${obj[key]}`);
+}
+
+// Nested Loops
+for (let i = 1; i <= 3; i++) {
+for (let j = 1; j <= 3; j++) {
+    console.log(`i: ${i}, j: ${j}`);
+}
+}
+
+// Breaking a Loop
+for (let i = 0; i < 10; i++) {
+if (i === 5) break;
+console.log(i);
+}
+
+// Continuing a Loop
+for (let i = 0; i < 10; i++) {
+if (i % 2 === 0) continue;
+console.log(i);
+}
+    </pre>
+</section>
 
   <!-- Class and Objects -->
   <section>
@@ -810,23 +1002,7 @@ console.log(person.greet());
   </section>
 
 
-  <script>
-
-    var a1 = 5
-
-    var a1 = 10
-
-    console.log(a1);
-
-
-    let b2 = 10
-
-    const c = 10
-
-    var a1 = 10
-
-    // JavaScript code will go here
-    console.log("var value  a1" + a1);
+  <script src="./script.js">
   </script>
 
   <!-- Other sections and topics will follow the same structure -->
