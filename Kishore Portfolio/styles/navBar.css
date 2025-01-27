@@ -1,0 +1,126 @@
+.navBar {
+  background-color: var(--Secondary-color)
+}
+
+.mobile-navbar {
+  display: none;
+}
+
+.lap-navbar {
+  display: block;
+}
+
+/* Lap NavBar Section */
+
+.lap-navbar {
+  display: block;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.lap-navbar .left-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lap-navbar .user-logo {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--Primary-text-font-color);
+}
+
+.right-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-right: 10px;
+}
+
+.right-nav .nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.nav a {
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  color: var(--Secondary-text-font-color);
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.lap-navbar .cv-download a {
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  background-color: var(--Primary-text-font-color);
+  border-radius: 15px;
+  color: var(--Secondary-color);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nav-about {
+  text-decoration: underline 2px var(--Secondary-text-font-color) !important;
+}
+
+.nav a:hover {
+  text-decoration: underline 2px var(--Secondary-text-font-color);
+}
+
+.cv-download a:hover {
+  background-color: #374151;
+  color: var(--Secondary-color);
+}
+
+/* Mobile NavBar Section */
+
+@media screen and (max-width: 896px) {
+  .lap-navbar {
+    display: none;
+  }
+
+  .mobile-navbar {
+    display: block;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .mobile-navbar .left-nav-mobile {
+    width: calc(50% + 53px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile-navbar .left-nav-mobile .user-logo {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 30px;
+    color: var(--Primary-text-font-color);
+  }
+
+  .mobile-navbar .left-nav-mobile .nav-icon {
+    padding: 10px;
+  }
+}
