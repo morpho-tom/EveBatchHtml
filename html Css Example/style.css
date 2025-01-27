@@ -1,3 +1,7 @@
-*{
+/* *{
     font-family: 'Times New Roman', Times, serif;
+} */
+.submitButton{
+    color:#fff !important;
+    background-color: #43aa51;
 }

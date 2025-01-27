@@ -20,7 +20,12 @@
             border-radius: 4px;
         }
 
-        h2 {
+        h2,
+        h1,
+        h3,
+        h4,
+        h5,
+        h6 {
             color: #007BFF;
             padding: 10px;
 
@@ -46,6 +51,7 @@
         }
     </style>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -106,6 +112,7 @@
                 commas.<code>p,h1,div{}</code></li>
         </ul>
 
+        <button class="submitButton">submit</button>
 
     </section>
     <hr>
@@ -154,7 +161,7 @@
                 Linear Gradient: Red to Yellow
             </div>
             <!-- Radial Gradient -->
-            <div style="height: 50px; background: radial-gradient(circle, blue, white); margin-bottom: 10px;">
+            <div style="height: 50px; background: radial-gradient( blue, white); margin-bottom: 10px;">
                 Radial Gradient: Blue to White
             </div>
             <!-- Conic Gradient -->
@@ -396,7 +403,8 @@
 
                 /* Header row background */
                 th {
-                    background-color: #f2f2f2;
+                    background-color: #3975ca;
+                    color: #fff;
                 }
 
                 /* Alternating row colors */
@@ -535,7 +543,7 @@
         <p>Advanced CSS features include animations, transitions, and flexbox/grid layouts.</p>
 
         <p><b>Example 1: Flexbox Layout</b></p>
-        <div class="example" style="display: flex; gap: 10px;">
+        <div class="example">
             <div style="background: red; padding: 10px; color: white;">Flex Item 1</div>
             <div style="background: blue; padding: 10px; color: white;">Flex Item 2</div>
             <div style="background: green; padding: 10px; color: white;">Flex Item 3</div>
@@ -549,7 +557,45 @@
             <div class="grid-item">Grid Item 4</div>
         </div>
 
-        <p><b>Example 3: Transitions and Animations</b></p>
+        <div class="example">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Grid</th>
+                        <th>Flexbox</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dimension</td>
+                        <td>Two-Dimensional</td>
+                        <td>One-Dimensional</td>
+                    </tr>
+                    <tr>
+                        <td>Features</td>
+                        <td>Can flex combination of items through space-occupying features</td>
+                        <td>Can push content elements to extreme alignment</td>
+                    </tr>
+                    <tr>
+                        <td>Support Type</td>
+                        <td>Layout First</td>
+                        <td>Content First</td>
+                    </tr>
+                    <tr>
+                        <td>Primary Use Case</td>
+                        <td>Creating complex layouts with rows and columns</td>
+                        <td>Aligning items in a row or column</td>
+                    </tr>
+                    <tr>
+                        <td>Performance</td>
+                        <td>Can be less in performance due to very complex grids</td>
+                        <td>Generally faster for simple layouts</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>3: Transitions and Animations</b></p>
         <div class="example-animation">
             <button class="animate-button">Hover Me!</button>
         </div>
@@ -573,7 +619,7 @@
             /* Grid Layout Example */
             .example-grid {
                 display: grid;
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 2fr);
                 gap: 10px;
                 margin-top: 10px;
             }
@@ -622,6 +668,11 @@
         <p>CSS positioning is used to position elements relative to their container, viewport, or other elements.</p>
 
         <div class="position-example" style="position: relative; height: 200px; background: lightblue;">
+             <!-- sticky Positioning -->
+             <div style="position: sticky; top: 10px; background: rgb(230, 23, 209); padding: 10px; color: white;">
+                Absolute
+            </div>
+
             <!-- Absolute Positioning -->
             <div style="position: absolute; top: 50px; left: 50px; background: red; padding: 10px; color: white;">
                 Absolute
@@ -641,12 +692,12 @@
     <hr>
 
     <!-- 22. CSS Floating -->
-
     <section>
         <h2>22. CSS Floating</h2>
         <p>Floating allows elements to be aligned to the left or right within their container.</p>
         <div style="overflow: auto;">
-            <div style="float: left; width: 30%; background: lightgreen; padding: 10px;">Float Left</div>
+            <!-- <div style="float: left; width: 30%; background: lightgreen; padding: 10px;">Float Left</div> -->
+            <div style="float:inline-start; width: 30%; background: lightgreen; padding: 10px;">Float center</div>
             <div style="float: right; width: 30%; background: lightcoral; padding: 10px;">Float Right</div>
         </div>
     </section>
@@ -669,7 +720,7 @@
     <section>
         <h2>24. CSS Navigation Bar</h2>
         <nav style="background: black; padding: 10px;">
-            <a href="#" style="color: white; margin-right: 10px; text-decoration: none;">Home</a>
+            <a href="./htmlExample.html" style="color: white; margin-right: 10px; text-decoration: none;" target="_blank">Home</a>
             <a href="#" style="color: white; margin-right: 10px; text-decoration: none;">About</a>
             <a href="#" style="color: white; text-decoration: none;">Contact</a>
         </nav>
@@ -726,8 +777,12 @@
 
     <section>
         <h2>30. CSS Transition Property</h2>
+        <code>transition: [property] [duration] [timing-function] [delay];</code>
+        <br>
+        <br>
         <button style="background: red; color: white; padding: 10px; transition: background 0.8s ease;">Hover
             Me</button>
+
     </section>
     <hr>
     <!-- 31. CSS Keyframe Animations -->
@@ -737,15 +792,19 @@
         <style>
             @keyframes move {
                 0% {
-                    transform: translateX(0);
+                    transform: translateY(0);
+                }
+                
+                25% {
+                    transform: translateX(50px);
                 }
 
                 50% {
-                    transform: translateX(100px);
+                    transform: translateY(100px);
                 }
 
                 100% {
-                    transform: translateX(0);
+                    transform: translateY(0);
                 }
             }
 
@@ -757,77 +816,14 @@
     </section>
     <hr>
 
-    <!-- 32. CSS Flexbox -->
-    <section>
-        <h2>32. CSS Flexbox</h2>
-        <div style="display: flex; gap: 10px;">
-            <div style="flex: 1; background: lightblue; padding: 10px;">Flex Item 1</div>
-            <div style="flex: 2; background: lightgreen; padding: 10px;">Flex Item 2</div>
-        </div>
-    </section>
-    <hr>
-    <!-- 33. CSS Grid -->
-
-    <section>
-        <h2>33. CSS Grid</h2>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-            <div style="background: lightblue; padding: 10px;">Grid Item 1</div>
-            <div style="background: lightgreen; padding: 10px;">Grid Item 2</div>
-            <div style="background: lightcoral; padding: 10px;">Grid Item 3</div>
-        </div>
-    </section>
-    <hr>
-    <!-- 34. CSS Media Queries -->
-
-    <section>
-        <h2>34. CSS Media Queries</h2>
-        <style>
-            /* Default style */
-            .responsive {
-                background: gray;
-                color: white;
-                padding: 20px;
-                text-align: center;
-            }
-
-            /* Style for screens smaller than 600px */
-            @media (max-width: 599px) {
-                .responsive {
-                    background: yellow;
-                    color: red;
-                }
-            }
-
-            /* Style for screens with a width between 600px and 1200px */
-            @media (min-width: 600px) and (max-width: 1200px) {
-                .responsive {
-                    background: lightgreen;
-                    color: black;
-                }
-            }
-
-            /* Style for screens larger than 1200px */
-            @media (min-width: 1201px) {
-                .responsive {
-                    background: lightblue;
-                    color: darkblue;
-                }
-            }
-        </style>
-        <div class="responsive">
-            Resize the window to see the background and text color change!
-        </div>
-    </section>
-
-
-    <hr>
-    <!-- 35. CSS Variables -->
+       <!-- 32. CSS Variables -->
 
     <section>
         <h2>35. CSS Variables</h2>
         <style>
             :root {
-                --primary-color: lightblue;
+                --primary-color: rgb(6, 48, 62);
+                --button-color: green;
             }
 
             .variable-example {
@@ -836,6 +832,7 @@
             }
         </style>
         <div class="variable-example">This uses a CSS variable!</div>
+
     </section>
 
 
