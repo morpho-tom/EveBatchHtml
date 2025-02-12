@@ -7,18 +7,17 @@ const UseSateExample = () => {
 
     
 
-//   let value = 1;
 
-//  const add = () =>  {
-//     setValue(55);
+ const add = () =>  {
+    setValue(value + 1);
 
-//     console.log(value);
-//   }
+    console.log(value);
+  }
 
   return (
     <>
       <div>count :{value}</div>
-      <button >add</button>
+      <button button={add} >add</button>
     </>
   );
 };
