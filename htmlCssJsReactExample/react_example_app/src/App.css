@@ -1,0 +1,11 @@
+.App {
+  display: inline-block;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.App div{
+  display: inline-block;
+  margin: 10px;
+}

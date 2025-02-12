@@ -1,0 +1,11 @@
+.card {
+    width: 290px;
+    height: 300px;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: #acf0db;
+}
+.card img {
+    width: 190px;
+    height: 130px;
+}
