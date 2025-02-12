@@ -20,7 +20,6 @@
 // console.log("Quotient:", quotient);
 // console.log("Remainder:", remainder);
 
-
 // // Comparison Operators
 // console.log("a > b:", a > b);
 // console.log("a <= b:", a <= b);
@@ -31,10 +30,9 @@
 // console.log("isActive AND isAvailable:", isActive && isAvailable);
 // console.log("isActive OR isAvailable:", isActive || isAvailable);
 // console.log("NOT isActive:", !isActive);
-       
 
 //     // <!-- Conditional Statements -->
-    
+
 // Simple If-Else Statement
 // const age = 17;
 // if (age >= 18) {
@@ -77,10 +75,9 @@
 // const age = 18
 // const isAdult = age >= 18 ? "Adult" : "Minor";
 // console.log(isAdult);
-       
 
 //     // <!-- Functions and Loops -->
-   
+
 // // Simple Function
 // function greet(name) {
 //     return `Hello, ${name}`;
@@ -135,7 +132,6 @@
 //         console.log(`i: ${i}, j: ${j}`);
 //     }
 // }
-       
 
 //     // Math Methods
 
@@ -161,10 +157,126 @@
 // console.log(Math.random()); // Between 0 and 1
 // console.log(Math.floor(Math.random() * 6) + 1); // Dice Roll
 
+// // arrow function example
+// const age = 25
 
+// const checkAge = age >= 18 ? (age >= 21 ? "you are ready to married" : "you are not ready to married") : "minor"
+// console.log(checkAge);
 
+// //array examples
 
-const age = 25
+let num1 = [1, 2, 3];
+let num2 = [4, 5, 6];
+// numbers.pop() // remove last element
+// numbers.push(7) // add element at the end
 
-const checkAge = age >= 18 ? (age >= 21 ? "you are ready to married" : "you are not ready to married") : "minor"
-console.log(checkAge);
+// numbers.shift() // remove first element
+
+// numbers.unshift(1) // add element at the beginning
+
+// numbers.splice(2, 1, 9) // remove 1 element at index 2
+
+// delete numbers[2] // remove element at index 2
+
+//  let sliceValue = numbers.slice(2,4) // return elements from index 2 to 4
+
+// let concatValue = num1.concat(num2) // merge two arrays
+
+// console.log(concatValue);
+
+// //object examples
+
+// const user = {
+//     firstName :"achappan",
+//     password : "1234",
+//     age : 25,
+//     email: 'abcd@gmail.com'
+// }
+// console.log(user);
+
+// // object examples
+// const user = {
+//     firstName: "achappan",
+//     password: "1234",
+//     age: 25,
+//     email: 'abcd@gmail.com',
+//     assert: {
+//       bike: 're',
+//       car: 'tata',
+//       cycle: "hero"
+//     },
+//     value: [1, 2, 3, 4, 5],
+//     buy: function () {
+//       console.log("buying");
+//     },
+//     sell() {
+//       console.log("selling");
+//     }
+//   }
+
+//   const newobj = new Object
+//   newobj.name = "kannan"
+
+//   console.log(user.sell());
+
+// //Loops
+// console.log('hello')
+// console.log('hello')
+// console.log('hello')
+// console.log('hello')
+// console.log('hello')
+
+//for, while, do-while
+
+// for (let i = 1; i <= 10; i++) {
+//  if (i % 2 == 0){
+//   break
+//  }
+//  console.log(i)
+// }
+
+// let i = 1
+
+// while (i<= 10 ){
+//   console.log(i)
+//   i++
+// }
+// console.log("do wlile");
+
+// do {
+//   console.log(i)
+//   i++
+// }while (i <= 10 )
+
+// const carNames = ["bmw", "audi", "benz", "tata"];
+
+// for (let car of carNames) {
+//   console.log(car);
+// }
+
+// const obj = {
+//   name: "achappan",
+//   age: "27",
+//   email: "abcd@gmail.com",
+// };
+
+// for ( const user in obj){
+//   console.log(user ,':',obj[user])
+// }
+
+// function add(a, b) {
+//   return a + b;
+// }
+// console.log(add(5,2))
+
+let fun = function (a, b) {
+  return a + b;
+};
+
+console.log(fun(3, 6));
+
+ const sub = (a,b) => {
+return a-b
+ }
+console.log(sub(5,2))
+//  sub(5,18)
